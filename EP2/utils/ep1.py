@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 import matplotlib.image as mpimg
 import os
 
-def show_samples_all_classes(images_folder, n_samples_per_class = 7):
+def show_samples_all_classes(images_folder, n_samples_per_class = 7, title="", gray_scale=True):
   dict_images = store_images_dictionary(images_folder)
   plt.rcParams['figure.figsize'] = (10.0, 8.0)
   n_classes = len(dict_images)
@@ -15,10 +15,15 @@ def show_samples_all_classes(images_folder, n_samples_per_class = 7):
         image = mpimg.imread(image_path)
         plt_idx = i * n_classes + index + 1  # calculate plot location in the grid
         plt.subplot(n_samples_per_class, n_classes, plt_idx)
-        plt.imshow(image)
+        if gray_scale:
+           plt.imshow(image, cmap='gray')
+        else:
+            plt.imshow(image)
         plt.axis('off')
         if i == 0:
             plt.title(item_label)
+  plt.suptitle(title)
+  plt.tight_layout()
   plt.show()
 
 def show_class(label, images_folder, n_samples = 20):
@@ -35,9 +40,9 @@ def show_class(label, images_folder, n_samples = 20):
   plt.suptitle(label, fontsize=24, y=0.95)
   plt.show()
 
-def show_global_table(images_folder):
+def show_global_table(images_folder, title=""):
   print("================================================================")
-  print("Tabela Global Sumária:")
+  print("Tabela Global Sumária:", title)
   classes = list_classes(images_folder)
   print("--> Nome das Classes:", classes)
   print("--> Número de Classes:", len(classes))
