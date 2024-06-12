@@ -1,5 +1,5 @@
-*images/augmentedDataset*
-*images/originalGrayDataset*
+*images\/augmentedDataset*
+*images\/originalGrayDataset*
 *.DS_Store
 
 # Byte-compiled / optimized / DLL files
