@@ -1,4 +1,4 @@
-# EP1
+# EP2
 
 ## Directory Structure
 The notebook [EP2_notebook1_MAC0417](https://github.com/mathjug/MAC0417-Project/blob/main/EP2/EP2_notebook1_MAC0417.ipynb)
